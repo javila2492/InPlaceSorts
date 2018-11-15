@@ -2,7 +2,16 @@ public class InPlaceSorts
 {
     public static void insertionSort(int[] arr)
     {
-
+        boolean done = false
+        for(int i = 0; i < arr.length - 1; i++)
+        {
+            for(int j = i; !done; j--)
+            {
+                if(j < 0)
+                    break;
+                if()
+            }
+        }
     }
 
     public static void selectionSort(int[] arr)
