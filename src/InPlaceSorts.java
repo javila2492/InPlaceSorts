@@ -1,15 +1,22 @@
+import static java.lang.Integer.parseInt;
+
 public class InPlaceSorts
 {
     public static void insertionSort(int[] arr)
     {
-        boolean done = false
+        int a = 0;
+        int b = 0;
         for(int i = 0; i < arr.length - 1; i++)
         {
-            for(int j = i; !done; j--)
+            for(int j = i; j >= 0; j--)
             {
-                if(j < 0)
-                    break;
-                if()
+                if (arr[i] < arr[j])
+                {
+                    arr[i] = a;
+                    arr[j] = b;
+                    arr[i] = b;
+                    arr[j] = a;
+                }
             }
         }
     }
@@ -56,4 +63,25 @@ public class InPlaceSorts
         }
     }
 
+    public static void bubbleSortAlpha(String[] arr)
+    {
+        boolean done = false;
+        String a;
+        String b;
+        while(!done)
+        {
+            done = true;
+            for(int i = 0; i < arr.length - 1; i++)
+            {
+                a = arr[i];
+                b = arr[i + 1];
+                if(a.compareTo(b) < 0)
+                {
+                    arr[i] = b;
+                    arr[i + 1] = a;
+                    done = false;
+                }
+            }
+        }
+    }
 }
