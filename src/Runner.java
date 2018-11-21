@@ -9,10 +9,7 @@ public class Runner
         {
             array[i] = (int)(Math.random() * 10000) + 1;
         }
-        for(int i = 0; i < alphaArray.length - 1; i++)
-        {
-            alphaArray[i] = alphaMake((int)(Math.random() * 1000) + 1);
-        }
+        alphaArray = alphaMake(10, 10);
         double startTime = System.currentTimeMillis();
         InPlaceSorts.bubbleSort(array);
         double endTime = System.currentTimeMillis();
@@ -31,18 +28,22 @@ public class Runner
         System.out.println("Bubble Sort Alpha took " + (endTime - startTime) + " milliseconds.");
     }
 
-    public static String alphaMake(int count)
+    public static String[] alphaMake(int num, int len)
     {
-        int a = count % 100;
-        String b = "";
-        while(a > 0)
+        String[] arr = new String[num];
+        while(num > 0)
         {
-            if(a > letters.length - 1)
-                b += letters[(int) (Math.random() * letters.length - 1)];
-            else
-                b += letters[a];
-            a -= (int) (Math.random() * 27);
+            int i = 0;
+            String s = "";
+            while(i < len)
+            {
+                char c = (char)((Math.random() * 26) + 97);
+                s = s + c;
+                i++;
+            }
+            num--;
+            arr[num] = s;
         }
-        return b;
+        return arr;
     }
 }

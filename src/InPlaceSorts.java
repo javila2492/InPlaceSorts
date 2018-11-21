@@ -75,7 +75,7 @@ public class InPlaceSorts
             {
                 a = arr[i];
                 b = arr[i + 1];
-                if(a.compareTo(b) < 0)
+                if(a.substring(0, 1).compareTo(b.substring(0, 1)) < 0)
                 {
                     arr[i] = b;
                     arr[i + 1] = a;
